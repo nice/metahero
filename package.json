@@ -1,0 +1,28 @@
+{
+  "name": "metahero",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mithril": "^1.1.6",
+    "moment": "^2.22.2",
+    "parcel-bundler": "^1.10.3",
+    "spectre.css": "^0.5.3"
+  },
+  "devDependencies": {
+    "browserify": "^16.2.3",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  }
+}

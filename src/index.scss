@@ -1,0 +1,67 @@
+@import "spectre.css/src/spectre.scss";
+@import "spectre.css/src/_icons.scss";
+
+$brand-01: #3d70b2;
+$brand-02: #5596e6;
+$ui-01: #ffffff;
+$ui-02: #f4f7fb;
+
+html,
+body {
+  background: $ui-02;
+  height:100%;
+}
+
+#header-inner,
+#content-inner,
+#footer-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#header-inner {
+  background: $brand-01;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#content-inner {
+  background: $ui-01;
+  padding-bottom: 5px;
+  min-height: 100vh;
+}
+
+#main {
+  background: $ui-01;
+}
+
+.meta-img {
+  width: 100%;
+  max-width: 90px;
+  border-radius: 5px;
+}
+
+/*spectre.css overrides*/
+.tab {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.copyleft {
+  display:inline-block;
+  transform: rotate(180deg);
+}
+
+.circle {
+  background: #ec1313;
+  border-radius: 50%;
+  display: inline-block;
+  height: 0.5rem;
+  width: 0.5rem;
+}
+
+.loading-wrapper {
+  padding-top: 40%;
+}
