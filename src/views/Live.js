@@ -23,7 +23,7 @@ var Live = {
       clearInterval(dummy.looper);
       dummy.looper = null;
     }
-    dummy.looper = setInterval(loop, 1000*31);
+    dummy.looper = setInterval(loop, 1000*61);
   },
   view: function() {
     if(!Rank.list.length) {
@@ -41,7 +41,7 @@ var Live = {
           m(".column.col-7.col-sm-6.col-xs-5", [
             m(".text-dark", Hero.list[item.hero_id].localized_name),
             m("", [
-              m("span.text-gray", [m("small", "Played in ")]),
+              m("span.text-gray", [m("small", "Picked in ")]),
               m("mark", [m("b.text-large", item.rank),m("small", "/100")]),
               m("span.text-gray", [m("small", " top games now.")])
             ])
