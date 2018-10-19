@@ -52,6 +52,8 @@ body {
 .copyleft {
   display:inline-block;
   transform: rotate(180deg);
+  position: relative;
+  top: 4px;
 }
 
 .circle {

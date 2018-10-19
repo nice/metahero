@@ -4,21 +4,22 @@ var Layout = require("./views/Layout");
 var Live = require("./views/Live");
 var Pro = require("./views/Pro");
 var Pub = require("./views/Pub");
+var Footer = require("./views/Footer");
 
 m.route(document.getElementById("main"), "/live", {
   "/live": {
     render: function() {
-      return m(Layout, m(Live));
+      return m(Layout, [m(Live), m(Footer)]);
     }
   },
   "/pro": {
     render: function() {
-      return m(Layout, m(Pro));
+      return m(Layout, [m(Pro), m(Footer)]);
     }
   },
   "/pub": {
     render: function() {
-      return m(Layout, m(Pub));
+      return m(Layout, [m(Pub), m(Footer)]);
     }
   }
 });
