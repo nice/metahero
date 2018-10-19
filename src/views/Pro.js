@@ -7,20 +7,15 @@ var winrate = require("../utils/Winrate");
 
 var Pro = {
   oninit: function() {
-    console.log("oninit:pro");
-
     Promise.all([
       Hero.loadList(),
       Match.loadProList()
     ]).then(function() {
-      console.log("then:pro");
       Rank.generateList(Hero, Match);
     });
   },
   view: function() {
-    console.log("view:pro");
-
-    if(!Match.list.length && !("1" in Hero.list)) {
+    if(!Rank.list.length) {
       return m(".loading-wrapper", [
         m(".loading.loading-lg", "")
       ]); 

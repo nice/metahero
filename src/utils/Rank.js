@@ -3,8 +3,8 @@ var m = require("mithril");
 var Rank = {
   list: [],
   generateList: function(Hero, Match) {
-    Rank.list = [];
     // reset ranks
+    Rank.list = [];
     var Hero = JSON.parse(JSON.stringify(Hero));
     var Match = JSON.parse(JSON.stringify(Match));
 

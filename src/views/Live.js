@@ -7,20 +7,16 @@ var winrate = require("../utils/Winrate");
 
 var Live = {
   oninit: function() {
-    console.log("oninit:live");
-
+    Rank.list = [];
     Promise.all([
       Hero.loadList(),
       Match.loadLiveList()
     ]).then(function() {
-      console.log("then:live");
       Rank.generateList(Hero, Match);
     });
   },
   view: function() {
-    console.log("view:live");
-
-    if(!Match.list.length && !("1" in Hero.list)) {
+    if(!Rank.list.length) {
       return m(".loading-wrapper", [
         m(".loading.loading-lg", "")
       ]); 

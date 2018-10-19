@@ -8,7 +8,7 @@ var Hero = {
     list: {},
     stamp: 0,
   },
-  cacheExpiry: 30,
+  cacheExpiry: 60,
 
   loadList: function() {
     // Hero.list = {};
