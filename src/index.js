@@ -28,13 +28,12 @@ m.route(document.getElementById("main"), "/live", {
   }
 });
 
-// m.mount(document.getElementById("footer-inner"), {
-//   oninit: function() {
-//   },
-//   view: function() {
-//     function blink() {
-//       m.route.set(m.route.get());
-//     }
-//     return m("h1", {onclick: blink}, "test test"+m.route.get());
-//   }
-// });
+m.mount(document.getElementById("reload"), {
+  oninit: function() {
+  },
+  view: function() {
+    return m("a.btn.btn-link.text-light[href='']", 
+      m("i.icon.icon-refresh")
+    );
+  }
+});
