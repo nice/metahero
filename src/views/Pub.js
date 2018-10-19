@@ -7,7 +7,7 @@ var winrate = require("../utils/Winrate");
 var dummy = require("../utils/Dummy");
 
 var Pub = {
-  oninit: function() {
+  oninit: function(vnode) {
     Rank.list = [];
     Promise.all([
       Hero.loadList(),
@@ -21,7 +21,7 @@ var Pub = {
       dummy.looper = null;
     }
   },
-  view: function() {
+  view: function(vnode) {
     if(!Rank.list.length) {
       return m(".loading-wrapper", [
         m(".loading.loading-lg", "")
@@ -48,7 +48,7 @@ var Pub = {
           ])
         ]),
       ]),m(".divider"),"\n"]);
-    }));
+    }), m(".d-hide", vnode.key));
   }
 };
 

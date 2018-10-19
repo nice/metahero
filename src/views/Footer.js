@@ -3,9 +3,9 @@ var m = require("mithril");
 var Rank = require("../utils/Rank");
 
 var Footer = {
-  view: function() {
+  view: function(vnode) {
     if(!Rank.list.length) {
-      return;
+      return m("");
     }
 
     return m(".credits", [
@@ -20,7 +20,7 @@ var Footer = {
           ])
         ])
       ])
-    ]);
+    ], m(".d-hide", vnode.key));
   }
 };
 

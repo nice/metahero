@@ -7,7 +7,7 @@ var winrate = require("../utils/Winrate");
 var dummy = require("../utils/Dummy");
 
 var Live = {
-  oninit: function() {
+  oninit: function(vnode) {
     function loop() {      
       Rank.list = [];
       Promise.all([
@@ -25,7 +25,7 @@ var Live = {
     }
     dummy.looper = setInterval(loop, 1000*61);
   },
-  view: function() {
+  view: function(vnode) {
     if(!Rank.list.length) {
       return m(".loading-wrapper", [
         m(".loading.loading-lg", "")
@@ -52,7 +52,7 @@ var Live = {
           ])
         ]),
       ]),m(".divider"),"\n"]);
-    }));
+    }), m(".d-hide", vnode.key));
   }
 };
 
