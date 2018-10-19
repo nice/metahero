@@ -4,16 +4,26 @@ var Hero = require("../models/Hero");
 var Match = require("../models/Match");
 var Rank = require("../utils/Rank");
 var winrate = require("../utils/Winrate");
+var dummy = require("../utils/Dummy");
 
 var Live = {
   oninit: function() {
-    Rank.list = [];
-    Promise.all([
-      Hero.loadList(),
-      Match.loadLiveList()
-    ]).then(function() {
-      Rank.generateList(Hero, Match);
-    });
+    function loop() {      
+      Rank.list = [];
+      Promise.all([
+        Hero.loadList(),
+        Match.loadLiveList()
+      ]).then(function() {
+        Rank.generateList(Hero, Match);
+      });
+    }
+    loop();
+
+    if(dummy.looper) {
+      clearInterval(dummy.looper);
+      dummy.looper = null;
+    }
+    dummy.looper = setInterval(loop, 1000*31);
   },
   view: function() {
     if(!Rank.list.length) {

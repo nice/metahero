@@ -4,15 +4,22 @@ var Hero = require("../models/Hero");
 var Match = require("../models/Match");
 var Rank = require("../utils/Rank");
 var winrate = require("../utils/Winrate");
+var dummy = require("../utils/Dummy");
 
 var Pro = {
   oninit: function() {
+    Rank.list = [];
     Promise.all([
       Hero.loadList(),
       Match.loadProList()
     ]).then(function() {
       Rank.generateList(Hero, Match);
     });
+
+    if(dummy.looper) {
+      clearInterval(dummy.looper);
+      dummy.looper = null;
+    }
   },
   view: function() {
     if(!Rank.list.length) {
