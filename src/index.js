@@ -27,13 +27,3 @@ m.route(document.getElementById("main"), "/live", {
     }
   }
 });
-
-m.mount(document.getElementById("reload"), {
-  oninit: function() {
-  },
-  view: function() {
-    return m("a.btn.btn-link.text-light[href='']", 
-      m("i.icon.icon-refresh")
-    );
-  }
-});

@@ -23,7 +23,6 @@ var Layout = {
 
     function refresh() {
       dummy.timestamp = moment().format("X");
-      Rank.list = [];
     }
   }
 };

@@ -8,8 +8,11 @@ $ui-02: #f4f7fb;
 
 html,
 body {
-  background: $ui-02;
   height:100%;
+}
+
+body {
+  background: $ui-02;
 }
 
 #header-inner,
@@ -33,10 +36,6 @@ body {
   min-height: 100vh;
 }
 
-#main {
-  background: $ui-01;
-}
-
 .meta-img {
   width: 100%;
   max-width: 90px;
@@ -47,6 +46,12 @@ body {
 .tab {
   margin-top: 0;
   margin-bottom: 10px;
+}
+
+.tab .tab-item.active a, 
+.tab .tab-item a.active {
+  border-color: $brand-01;
+  color: $brand-01;
 }
 
 .copyleft {
@@ -66,4 +71,47 @@ body {
 
 .loading-wrapper {
   padding-top: 40%;
+}
+
+/*dark theme*/
+$dark-01: #37474f;
+$dark-02: #263238;
+$dark-text: #ffffff;
+
+.theme-dark {
+  background: $dark-01 !important;
+  color: $dark-text !important;
+}
+
+.theme-dark #header-inner {
+  background: $dark-02;
+  border-bottom: 2px solid $brand-01;
+}
+
+.theme-dark #content-inner {
+  background: $dark-02;
+}
+
+.tab {
+  border-color: $brand-01;
+}
+
+.theme-dark .divider {
+  border-color: $brand-01;
+}
+
+.theme-dark .text-dark {
+  color: $dark-text;
+}
+
+.theme-dark mark {
+  background: $dark-02;
+  color: $dark-text;
+  border: 1px solid $brand-01;
+}
+
+.theme-dark .chip {
+  background: $dark-02;
+  color: $dark-text;
+  border: 1px solid $brand-01;
 }
