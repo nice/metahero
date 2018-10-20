@@ -35,24 +35,29 @@ var Settings = {
               "className": "btn btn-clear float-right",
               onclick: function() {Settings.active = false;}
           }),
-          m("div.modal-title.h5", `Settings`)
+          m("div.modal-title.h5", 'Settings')
         ]),
         m("div.modal-body", [
           m("div.content", [
-            m("label", [
-              m("input[type='radio'][name='theme']", {
-                value: "light",
-                checked: Settings.theme === "light"?true:false,
-                onclick: m.withAttr("value", Settings.setTheme),
-              }),
-            ], " light"), m("br"),
-            m("label", [
-              m("input[type='radio'][name='theme']", {
-                value: "dark",
-                checked: Settings.theme === "dark"?true:false,
-                onclick: m.withAttr("value", Settings.setTheme),
-              }),
-            ], " dark"),
+            m(".form-group", [
+              m("label.form-label", "theme"),
+              m("label.form-radio", [
+                m("input[type='radio'][name='theme']", {
+                  value: "light",
+                  checked: Settings.theme === "light"?true:false,
+                  onclick: m.withAttr("value", Settings.setTheme),
+                }),
+                m("i.form-icon", "")
+              ], "light"),
+              m("label.form-radio", [
+                m("input[type='radio'][name='theme']", {
+                  value: "dark",
+                  checked: Settings.theme === "dark"?true:false,
+                  onclick: m.withAttr("value", Settings.setTheme),
+                }),
+                m("i.form-icon", "")
+              ], "dark"),
+            ]),
           ])
         ]),
         m("div.modal-footer")

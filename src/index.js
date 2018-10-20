@@ -11,6 +11,7 @@ var dummy = require("./utils/Dummy");
 
 dummy.timestamp = moment().format("X");
 
+// routes
 m.route(document.getElementById("main"), "/live", {
   "/live": {
     render: function() {
@@ -38,7 +39,7 @@ m.route(document.getElementById("main"), "/live", {
   }
 });
 
-
+// settings
 m.mount(document.getElementById("settings"), Settings);
 m.mount(document.getElementById("cog"), {
   view: function() {
