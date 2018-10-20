@@ -81,10 +81,15 @@ body {
   padding-top: 40%;
 }
 
+.navbar-brand {
+  position: relative;
+  top: 2px;
+}
+
 #cog img {
   width: 16px;
   position: relative;
-  top: 4px;
+  top: 8px;
 }
 
 /*dark theme*/
